@@ -102,7 +102,7 @@ def register_user():
 	password_info = password.get()
  
 	# Open file in write mode
-	file = open(username_info, "w")
+	file = open('user_id_file_liste/'+username_info, "w")
  
 	# write username and password information into file
 	file.write(username_info + "\n")
@@ -110,7 +110,6 @@ def register_user():
 	file.close()
 
 	username_entry.delete(0, END)
-	print(username_entry.delete(0, END))
 	password_entry.delete(0, END)
  
 	# set a label for showing success information on screen 
@@ -160,7 +159,8 @@ def login_verify():
     password_login_entry.delete(0, END)
 
     #The method listdir() returns a list containing the names of the entries in the directory given by path.
-    list_of_files = os.listdir()
+    list_of_files = os.listdir('user_id_file_liste')
+    #print(list_of_files)
 
     #defining verification's conditions 
     if username1 in list_of_files:
@@ -168,8 +168,9 @@ def login_verify():
     	#read the file, 
     	#as splitlines() actually splits on the newline character,
     	#the newline character is not left hanging at the end of each line. if password1 in verify:
-        file1 = open(username1, "r")
+        file1 = open('user_id_file_liste/'+username1, "r")
         verify = file1.read().splitlines()
+
         if password1 in verify:
             login_sucess()
  
