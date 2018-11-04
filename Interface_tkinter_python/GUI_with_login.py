@@ -13,6 +13,10 @@ def  main_acount_screen():
 	#link the function of registration with the main interface 
 	global main_screen
 
+	directory  ='helmijilmi'
+	if not os.path.exists(directory):
+		os.makedirs(directory)
+
 	#1-Create the GUI window, 2- Set the parameters size then thetitleof the GUI window 
 	main_screen = Tk()
 	main_screen.geometry("600x500")
