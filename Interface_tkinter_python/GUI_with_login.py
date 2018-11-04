@@ -44,7 +44,8 @@ def register():
 	register_screen.geometry('600x500')
 
 	#set text variable 
-	
+	username = SrringVar()
+	password = StringVar()
 
 
 #Try the GUI interface 
