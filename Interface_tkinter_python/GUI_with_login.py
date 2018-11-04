@@ -185,6 +185,9 @@ def login_sucess():
  
 # create OK button
     Button(login_success_screen, text="OK", command=delete_login_success).pack()
+	
+def delete_login_success():
+    login_success_screen.destroy()
 
 #Try the GUI interface 
 
