@@ -23,10 +23,13 @@ def  main_acount_screen():
 	#creat a quit button 
 	Button(main_screen, text='QUIT', command=main_screen.quit).pack(side=RIGHT)
 
-	Button(text="Login", height="2", width="30",font=("Calibri", 13)).pack() 
-	Label(text="").pack() 
+	#Button(text="Login", height="2", width="30",font=("Calibri", 13)).pack() 
+	#Label(text="").pack() 
 	# add command=register in button widget
 	Button(text="Register", height="2", width="30",font=("Calibri", 13), command=register).pack()
+
+	# add command = login 
+	Button(text="Login", height="2", width="30", command = login).pack()
 
 
 	#start the GUI 
