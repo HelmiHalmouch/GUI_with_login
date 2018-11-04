@@ -205,6 +205,18 @@ def password_not_recognised():
 def delete_password_not_recognised():
     password_not_recog_screen.destroy()
 
+# add function if username not found
+def user_not_found():
+    global user_not_found_screen
+    user_not_found_screen = Toplevel(login_screen)
+    user_not_found_screen.title("Success")
+    user_not_found_screen.geometry("150x100")
+    Label(user_not_found_screen, text="User Not Found").pack()
+    Button(user_not_found_screen, text="OK", command=delete_user_not_found_screen).pack()
+
+def delete_user_not_found_screen():
+	user_not_found_screen.destroy()
+
 #Try the GUI interface 
 
 if __name__=='__main__':
