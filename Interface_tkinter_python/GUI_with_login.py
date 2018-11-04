@@ -4,6 +4,7 @@
    Description: Creat a Graphical User Interface (GUI) with login in Tikinter python 
 '''
 from tkinter import*
+import suy, os 
 
 # def the fauntion fro the main screen 
 
@@ -147,26 +148,27 @@ def login_verification():
 	print('working....')
 
 def login_verify():
+
 	#get username and password
- 
     username1 = username_verify.get()
     password1 = password_verify.get()
-	# this will delete the entry after login button is pressed
+
+    # this will delete the entry after login button is pressed
     username_login_entry.delete(0, END)
     password_login_entry.delete(0, END)
- 
-	#The method listdir() returns a list containing the names of the entries in the directory given by path.
-    list_of_files = os.listdir()  
- 
-	#defining verification's conditions 
+
+    #The method listdir() returns a list containing the names of the entries in the directory given by path.
+    list_of_files = os.listdir()
+
+    #defining verification's conditions 
     if username1 in list_of_files:
-        file1 = open(username1, "r")   # open the file in read mode
- 
-	#read the file, 
-	#as splitlines() actually splits on the newline character,
-	#the newline character is not left hanging at the end of each line. if password1 in verify:
- 
-        verify = file1.read().splitlines() 
+    	# open the file in read mode
+    	#read the file, 
+    	#as splitlines() actually splits on the newline character,
+    	#the newline character is not left hanging at the end of each line. if password1 in verify:
+        file1 = open(username1, "r")
+        verify = file1.read().splitlines()
+        if password1 in verify:
             login_sucess()
  
         else:
@@ -174,16 +176,17 @@ def login_verify():
  
     else:
         user_not_found()
+ 
+
 
 def login_sucess():
- 
-    global login_success_screen   # make login_success_screen global
+	global login_success_screen   # make login_success_screen global
     login_success_screen = Toplevel(login_screen)
     login_success_screen.title("Success")
     login_success_screen.geometry("150x100")
     Label(login_success_screen, text="Login Success").pack()
  
-# create OK button
+	# create OK button
     Button(login_success_screen, text="OK", command=delete_login_success).pack()
 	
 def delete_login_success():
