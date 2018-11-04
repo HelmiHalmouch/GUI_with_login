@@ -13,7 +13,8 @@ def  main_acount_screen():
 	#link the function of registration with the main interface 
 	global main_screen
 
-	directory  ='helmijilmi'
+	#create folder to save the new id 
+	directory  ='user_id_file_liste' 
 	if not os.path.exists(directory):
 		os.makedirs(directory)
 
