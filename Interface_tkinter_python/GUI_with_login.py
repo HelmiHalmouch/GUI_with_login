@@ -25,9 +25,14 @@ def  main_acount_screen():
 
 	Button(text="Register", height="2", width="30",font=("Calibri", 13)).pack()
 
+
 	#start the GUI 
 	main_screen.mainloop()
 
+	#link the function of registration with the main interface 
+	global main_screen
+	# add command=register in button widget
+	Button(text="Register", height="2", width="30", command=register).pack()
 
 '''Designing New Screen For Registration'''
 def register():
@@ -46,6 +51,10 @@ def register():
 	#set text variable 
 	username = SrringVar()
 	password = StringVar()
+
+	# Set label for user's instruction
+	Label(register_screen, text="Please enter details below", bg="blue").pack()
+	Label(register_screen, text="").pack()
 
 
 #Try the GUI interface 
