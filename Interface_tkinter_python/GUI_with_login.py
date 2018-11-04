@@ -11,10 +11,6 @@ def  main_acount_screen():
 	
 	#link the function of registration with the main interface 
 	global main_screen
-	global username
-	global password
-	global username_entry
-	global password_entry
 
 	#1-Create the GUI window, 2- Set the parameters size then thetitleof the GUI window 
 	main_screen = Tk()
@@ -32,6 +28,7 @@ def  main_acount_screen():
 	# add command=register in button widget
 	Button(text="Register", height="2", width="30",font=("Calibri", 13), command=register).pack()
 
+
 	#start the GUI 
 	main_screen.mainloop()
 
@@ -45,6 +42,12 @@ def register():
 	-And in argument we have to pass global screen variable
 
 	'''
+	global username
+	global password
+	global username_entry
+	global password_entry
+	global register_screen
+
 	register_screen=Toplevel(main_screen)
 	register_screen.title('Register')
 	register_screen.geometry('300x250')
@@ -77,7 +80,10 @@ def register():
 	Label(register_screen, text="").pack()
 
 	# Set register button
-	Button(register_screen, text="Register", width=10, height=1, bg="blue").pack()
+	#Button(register_screen, text="Register", width=10, height=1, bg="blue").pack()
+
+	# add command = register 
+	Button(register_screen, text="Register", width=10, height=1, bg="blue", command = register_user).pack()
 
 '''Assigning Functions To Register Button'''
 	
