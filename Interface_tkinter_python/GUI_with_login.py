@@ -29,6 +29,24 @@ def  main_acount_screen():
 	main_screen.mainloop()
 
 
+'''Designing New Screen For Registration'''
+def register():
+
+	'''
+	-The Toplevel widget work pretty much like Frame,
+	-but it is displayed in a separate, top-level window. 
+	-Such windows usually have title bars, borders, and other “window decorations”.
+	-And in argument we have to pass global screen variable
+
+	'''
+	register_screen=Toplevel(main_screen)
+	register_screen.title('Register')
+	register_screen.geometry('600x500')
+
+	#set text variable 
+	
+
+
 #Try the GUI interface 
 
 if __name__=='__main__':
