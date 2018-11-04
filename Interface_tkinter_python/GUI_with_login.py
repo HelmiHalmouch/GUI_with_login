@@ -179,8 +179,6 @@ def login_verify():
     else:
         user_not_found()
  
-
-
 def login_sucess():
 	global login_success_screen   # make login_success_screen global
 	login_success_screen = Toplevel(login_screen)
@@ -193,6 +191,19 @@ def login_sucess():
 	
 def delete_login_success():
     login_success_screen.destroy()
+
+#Designing Invalid Password Popup
+
+def password_not_recognised():
+    global password_not_recog_screen
+    password_not_recog_screen = Toplevel(login_screen)
+    password_not_recog_screen.title("Success")
+    password_not_recog_screen.geometry("150x100")
+    Label(password_not_recog_screen, text="Invalid Password ").pack()
+    Button(password_not_recog_screen, text="OK", command=delete_password_not_recognised).pack()
+
+def delete_password_not_recognised():
+    password_not_recog_screen.destroy()
 
 #Try the GUI interface 
 
