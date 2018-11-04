@@ -29,7 +29,7 @@ def  main_acount_screen():
 	Button(text="Register", height="2", width="30",font=("Calibri", 13), command=register).pack()
 
 	# add command = login 
-	Button(text="Login", height="2", width="30", command = login).pack()
+	Button(text="Login", height="2", width="30",font=("Calibri", 13), command = login).pack()
 
 
 	#start the GUI 
@@ -141,6 +141,50 @@ def login():
     password__login_entry.pack()
     Label(login_screen, text="").pack()
     Button(login_screen, text="Login", width=10, height=1, command=login_verification).pack()
+
+''' Define login verification function'''
+def login_verification():
+	print('working....')
+
+def login_verify():
+	#get username and password
+ 
+    username1 = username_verify.get()
+    password1 = password_verify.get()
+	# this will delete the entry after login button is pressed
+    username_login_entry.delete(0, END)
+    password_login_entry.delete(0, END)
+ 
+	#The method listdir() returns a list containing the names of the entries in the directory given by path.
+    list_of_files = os.listdir()  
+ 
+	#defining verification's conditions 
+    if username1 in list_of_files:
+        file1 = open(username1, "r")   # open the file in read mode
+ 
+	#read the file, 
+	#as splitlines() actually splits on the newline character,
+	#the newline character is not left hanging at the end of each line. if password1 in verify:
+ 
+        verify = file1.read().splitlines() 
+            login_sucess()
+ 
+        else:
+            password_not_recognised()
+ 
+    else:
+        user_not_found()
+
+def login_sucess():
+ 
+    global login_success_screen   # make login_success_screen global
+    login_success_screen = Toplevel(login_screen)
+    login_success_screen.title("Success")
+    login_success_screen.geometry("150x100")
+    Label(login_success_screen, text="Login Success").pack()
+ 
+# create OK button
+    Button(login_success_screen, text="OK", command=delete_login_success).pack()
 
 #Try the GUI interface 
 
